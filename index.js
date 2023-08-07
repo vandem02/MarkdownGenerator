@@ -17,20 +17,10 @@ const questions = [
     message: "Please describe the purpose and functionality of this project.",
   },
   {
-    type: "input",
-    name: "screenshot",
-    message: "Please provide the relative path to the image you want to use as the screenshot.",
-  },
-  {
-    type: "input",
-    name: "link",
-    message: "Please provide a URL where a user can access your deployed application.",
-  },
-  {
-    type: "checkbox",
+    type: "list",
     name: "license",
     message: "Please select a license applicable to this project.",
-    choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+    choices: ["None", "MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3"],
   },
   {
     type: "input",

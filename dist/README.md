@@ -8,14 +8,32 @@ h
 ![alt-text](h)
 ## Table of Contents
 * [Features](#features)
-* [Languages & Dependencies](#languagesanddependencies)
+* [Languages & Dependencies](#languages-dependencies)
 * [How to Use This Application](#HowtoUseThisApplication)
 * [Contributors](#contributors)
 * [Testing](#testing)
 * [Questions](#questions)
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
 ## Features
+
 It can poop
-## Languages & Dependencies
+## <a id="languages-dependencies"></a>Languages & Dependencies
 node, npm
 ## How to Use This Application:
 Java
