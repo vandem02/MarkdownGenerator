@@ -24,7 +24,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message: "Please provide instructions on how to install the project.",
+    message: "Please provide instructions on how to use the project.",
   },
   {
     type: "list",
@@ -64,8 +64,8 @@ function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log("Creating professional README.md file...");
     writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
+    console.log("Done. Please check the dist folder for your generated README.")
   });
-  console.log("Done. Please check the dist folder for your generated README.")
 }
 
 // Function call to initialize app
