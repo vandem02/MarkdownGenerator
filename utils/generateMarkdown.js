@@ -10,40 +10,37 @@ function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  return license !== "None" ? `This project is licensed under the ${license} license.` : "This project is unlicensed."
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} 
-${renderLicenseBadge(data.license)}
+  const {title, description, installation, usage, license, contributors, tests, email, github} = data
+  return `# ${title} 
+${renderLicenseBadge(license)}
 ## Description
-${data.description}
-## Deployed Application URL
-${data.link}
-## Screenshot
-![alt-text](${data.screenshot})
+${description}
 ## Table of Contents
-* [Features](#features)
-* [Languages & Dependencies](#languagesanddependencies)
-* [How to Use This Application](#HowtoUseThisApplication)
-* [Contributors](#contributors)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contribution Guidelines](#contribution)
 * [Testing](#testing)
-* [Questions](#questions)
-## Features
-${data.features}
-## Languages & Dependencies
-${data.require}
-## How to Use This Application:
-${data.usage}
-## Contributors
-${data.contributors}
-## Testing
-${data.test}
-## Questions
-Please send your questions [here](mailto:${data.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${data.creator}](https://github.com/${data.creator}).
+* [Contact](#contact)
+## <a id="installation"></a>Installation
+${installation}
+## <a id="usage"></a>Usage
+${usage}
+## <a id="license"></a>License
+${renderLicenseSection(license)}
+## <a id="contribution"></a>Contribution Guidelines
+${contributors}
+## <a id="testing"></a>Testing
+${tests}
+## <a id="contact"></a>Contact
+If you have a question or experience problems with this project, please contact [${email}](mailto:${email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${github}](https://github.com/${github}).
 `;
 }
-
-module.exports = generateMarkdown;
 
 module.exports = generateMarkdown;

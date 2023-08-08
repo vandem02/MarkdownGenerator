@@ -9,12 +9,22 @@ const questions = [
   {
     type: "input",
     name: "title",
-    message: "Please name your Project.",
+    message: "What's the name of your project?",
   },
   {
     type: "input",
     name: "description",
-    message: "Please describe the purpose and functionality of this project.",
+    message: "Please provide a description of the project.",
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "Please provide instructions on how to install the project.",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "Please provide instructions on how to install the project.",
   },
   {
     type: "list",
@@ -24,39 +34,23 @@ const questions = [
   },
   {
     type: "input",
-    name: "require",
-    message: "List any project dependencies here.",
+    name: "contributors",
+    message: "Please list any contributors and their contributions. (<Enter> if there are none)",
   },
   {
     type: "input",
-    name: "features",
-    message: "List some cool features about this project here.",
-  },
-  {
-    type: "input",
-    name: "usage",
-    message: "State the languages or technologies associated with this project.",
-  },
-  {
-    type: "input",
-    name: "creator",
-    message: "Write your GitHub username.",
+    name: "tests",
+    message: "Provide a walkthrough of required tests.",
   },
   {
     type: "input",
     name: "email",
-    message: "Provide a valid email address.",
+    message: "How should a user contact you if they experience problems with your project? (Enter an email address.)",
   },
   {
     type: "input",
-    name: "contributors",
-    message: "Please list any contributors. (Use GitHub usernames)",
-    default: "",
-  },
-  {
-    type: "input",
-    name: "test",
-    message: "Provide walkthrough of required tests if applicable.",
+    name: "github",
+    message: "Enter your GitHub username.",
   },
 ];
 
@@ -68,9 +62,10 @@ function writeToFile(fileName, data) {
 // Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((responses) => {
-    console.log("Creating Professional README.md File...");
+    console.log("Creating professional README.md file...");
     writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
   });
+  console.log("Done. Please check the dist folder for your generated README.")
 }
 
 // Function call to initialize app
